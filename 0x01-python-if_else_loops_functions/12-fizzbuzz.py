@@ -11,6 +11,3 @@ def fizzbuzz():
         else:
             print("{:d} ".format(i), end="")
         i += 1
-
-fizzbuzz()
-print("")
