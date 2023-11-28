@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-for a in range(90, 64, -1):
-    if a % 2 == 0:
-        a = a + 32
-        print("{:c}".format(a), end="")
+for i in range(26):
+    if (i % 2 == 0):
+        up = 32
     else:
-        print("{:c}".format(a), end="")
+        up = 0
+    print("{}".format(chr((26 - i + 64) + up)), end="")
