@@ -1,1 +1,2 @@
-this is alx high level programming
+# ALX Higher Level Programming Repository
+##### Welcome to the ALX Higher Level Programming repository! This repository hosts a collection of Python and Java projects specifically designed for the higher level programming curriculum at ALX School. Here, you will find a range of projects covering various programming concepts and languages.
