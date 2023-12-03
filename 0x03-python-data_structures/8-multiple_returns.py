@@ -2,11 +2,7 @@
 
 def multiple_returns(sentence):
     length = len(sentence)
-    n_tuple = ()
     if (length == 0):
-        n_tuple += (0,)
-        n_tuple += ('N',)
+        return (0, None)
     else:
-        n_tuple += (length,)
-        n_tuple += (sentence[0],)
-    return (n_tuple)
+        return (length, sentence[0])
