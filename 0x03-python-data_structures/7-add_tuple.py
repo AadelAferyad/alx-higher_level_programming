@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def add_tuple(tuple_a=(), tuple_b=()):
-    length = engthen(tuple_a)
+    length = len(tuple_a)
     h = len(tuple_b)
     if (length < 2):
         tuple_a += (0,)
