@@ -10,5 +10,5 @@ def search_replace(my_list, search, replace):
         if search == i:
             new.append(replace)
         else:
-            new.append(my_list[i])
+            new.append(i)
     return new
