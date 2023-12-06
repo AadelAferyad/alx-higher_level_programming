@@ -6,7 +6,7 @@ def best_score(a_dictionary):
     nayt_max = -1
     m = 'd'
     for key, value in a_dictionary.items():
-        if value > nayt_max:
+        if value >= nayt_max:
             nayt_max = value
             m = key
     return (m)
