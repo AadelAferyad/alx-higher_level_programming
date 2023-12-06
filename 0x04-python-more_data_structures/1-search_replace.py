@@ -6,8 +6,8 @@ def search_replace(my_list, search, replace):
     if search > len(my_list):
         return my_list
     new = []
-    for i in range(len(my_list)):
-        if search - 1 == i:
+    for i in range(my_list):
+        if search == i:
             new.append(replace)
         else:
             new.append(my_list[i])
