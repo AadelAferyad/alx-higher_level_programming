@@ -52,7 +52,7 @@ class Square:
             print()
         else:
             i = 0
-            if (self.__position[1] > 0):
+            for j in range(self.__position[1]):
                 print()
             while i < self.__size:
                 print("{}".format(" " * self.__position[0]), end="")
