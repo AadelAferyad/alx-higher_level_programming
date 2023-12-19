@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""check if size is integer and greater then 0"""
+
 class Square:
     """This is a simple class"""
     def __init__(self, size=0):
