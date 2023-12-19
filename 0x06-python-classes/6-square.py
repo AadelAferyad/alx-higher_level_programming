@@ -51,7 +51,7 @@ class Square:
         else:
             i = 0
             while i < self.__size:
-                if not self.__position[1] - self.__position[0] > 0:
+                if not (self.__position[1] - self.__position[0] > 0):
                     print("{}".format(" " * self.__position[0]), end="")
                 print("{}".format("#" * self.__size), end="")
                 print()
