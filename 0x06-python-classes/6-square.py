@@ -52,11 +52,10 @@ class Square:
             print()
         else:
             i = 0
+            if (self.__position[1] > 0):
+                print()
             while i < self.__size:
-                if (self.__position[1] > 0):
-                    print()
-                else:
-                    print("{}".format(" " * self.__position[0]), end="")
+                print("{}".format(" " * self.__position[0]), end="")
                 print("{}".format("#" * self.__size), end="")
                 print()
                 i += 1
