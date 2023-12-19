@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """check if size is integer and greater then 0"""
 
 class Square:

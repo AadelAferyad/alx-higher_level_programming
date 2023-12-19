@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """First class init"""
 
 class Square:
