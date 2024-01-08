@@ -8,6 +8,4 @@ class MyList(list):
     """ class MyList """
     def print_sorted(self):
         """ print sorted list """
-        tmp = self.copy()
-        tmp.sort()
-        print(tmp)
+        print(sorted(self))
