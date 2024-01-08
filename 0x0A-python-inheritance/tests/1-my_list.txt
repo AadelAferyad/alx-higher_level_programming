@@ -22,5 +22,11 @@
     >>> lst_2 = MyList()
     >>> lst_2.print_sorted()
     []
+    >>> lst_3 = MyList("Aadel")
+    >>> print(lst_3)
+    ['A', 'a', 'd', 'e', 'l']
+    >>> lst_3.print_sorted()
+    ['A', 'a', 'd', 'e', 'l']
+
 
 --------------
