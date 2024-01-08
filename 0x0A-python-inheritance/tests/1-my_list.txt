@@ -1,0 +1,26 @@
+##1-my_list.py
+
+--------------
+
+    >>> MyList = __import__('1-my_list').MyList
+
+--------------
+
+    >>> lst = MyList()
+    >>> lst.append(4)
+    >>> lst.append(3)
+    >>> lst.append(2)
+    >>> lst.append(1)
+    >>> lst.append(5)
+    >>> print(lst)
+    [4, 3, 2, 1, 5]
+    >>> lst.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(lst)
+    [4, 3, 2, 1, 5]
+
+    >>> lst_2 = MyList()
+    >>> lst_2.print_sorted()
+    []
+
+--------------
