@@ -8,22 +8,6 @@ class Rectangle(Base):
     """ rect class"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """ mr constructor """
-        if type(width) != int:
-            raise TypeError("width must be an integer")
-        if type(height) != int:
-            raise TypeError("height must be an integer")
-        if type(x) != int:
-            raise TypeError("x must be an integer")
-        if type(y) != int:
-            raise TypeError("y must be an integer")
-        if (width <= 0):
-            raise ValueError("width must be > 0")
-        if (height <= 0):
-            raise ValueError("height must be > 0")
-        if (x < 0):
-            raise ValueError("x must be >= 0")
-        if (y < 0):
-            raise ValueError("y must be >= 0")
         self.__width = width
         self.__height = height
         self.__x = x
@@ -42,7 +26,7 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         if (val <= 0):
             raise ValueError("width must be > 0")
-        self.__width = int(val)
+        self.__width = val
 
     @property
     def height(self):
@@ -56,7 +40,7 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         if (val <= 0):
             raise ValueError("height must be > 0")
-        self.__height = int(val)
+        self.__height = val
 
     @property
     def x(self):
@@ -68,9 +52,9 @@ class Rectangle(Base):
         """ this is setter for x"""
         if type(val) != int:
             raise TypeError("x must be an integer")
-        if (val <= 0):
+        if (val < 0):
             raise ValueError("x must be >= 0")
-        self.__x = int(val)
+        self.__x = val
 
     @property
     def y(self):
@@ -82,9 +66,9 @@ class Rectangle(Base):
         """ this is setter for y"""
         if type(val) != int:
             raise TypeError("y must be an integer")
-        if (val <= 0):
+        if (val < 0):
             raise ValueError("y must be >= 0")
-        self.__y = int(val)
+        self.__y = val
 
     def area(self):
         """ area of the rectangle"""
