@@ -47,7 +47,7 @@ class Base:
     def create(cls, **dictionary):
         """returns an instance
         with all attributes already set"""
-        if dictionary:
+        if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 obj = cls(1, 1)
             elif cls.__name__ == "Square":
