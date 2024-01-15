@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ rect class """
+# from models.base import Base
 from base import Base
 
 
@@ -84,3 +85,55 @@ class Rectangle(Base):
         if (val <= 0):
             raise ValueError("y must be >= 0")
         self.__y = int(val)
+
+    def area(self):
+        """ area of the rectangle"""
+        return (self.__height * self.__width)
+
+    def display(self):
+        """ display method"""
+        if (self.__y > 0):
+            for y in range(self.__y):
+                print("")
+        for i in range(self.__height):
+            print(end=" " * self.__x if self.x > 0 else "")
+            for j in range(self.__width):
+                print("#", end="")
+            print("")
+
+    def __str__(self):
+        """ str magic method"""
+        return (f"[Rectangle] ({self.id}) \
+{self.__x}/{self.__y} - {self.__width}/{self.__height}")
+
+    def update(self, *args, **kwargs):
+        """ update using args """
+        if len(args) != 0:
+            if len(args) >= 1:
+                if args[0] is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+        elif len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
