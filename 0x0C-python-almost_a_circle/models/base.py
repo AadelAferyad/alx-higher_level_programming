@@ -3,6 +3,7 @@
 import json
 import os
 import csv
+import turtle
 
 
 class Base:
@@ -99,3 +100,60 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ draw using turtle"""
+        ls = ["blue", "red", "green", "purple", "orange", "white", "yellow"]
+        ls_2 = ["purple", "yellow", "white", "orange", "green", "red", "blue"]
+        if list_rectangles and list_squares:
+            screen = turtle.Screen()
+            screen.bgcolor("black")
+            pen = turtle.Turtle()
+            pen.shape("turtle")
+            pen.color("white")
+            pen.penup()
+            pen.forward(-300)
+            pen.right(90)
+            pen.forward(-250)
+            pen.left(90)
+            pen.pendown()
+            pos = 50
+            i = 0
+            j = 0
+            for obj in list_rectangles:
+                dic = obj.to_dictionary()
+                pen.color("white", ls[i])
+                pen.begin_fill()
+                pen.forward(dic["width"])
+                pen.right(90)
+                pen.forward(dic["height"])
+                pen.right(90)
+                pen.forward(dic["width"])
+                pen.right(90)
+                pen.forward(dic["height"])
+                pen.end_fill()
+                pen.penup()
+                pen.right(90)
+                pen.forward(dic["width"] + pos)
+                pen.pendown()
+                i += 1
+            pen.penup()
+            pen.left(90)
+            pen.forward(-300)
+            pen.right(90)
+            pen.forward(-350)
+            pen.pendown()
+            for obj in list_squares:
+                dic = obj.to_dictionary()
+                pen.color("white", ls_2[j])
+                pen.begin_fill()
+                for x in range(4):
+                    pen.forward(dic["size"])
+                    pen.right(90)
+                pen.end_fill()
+                pen.penup()
+                pen.forward(dic["size"] + pos)
+                pen.pendown()
+                j += 1
+            screen.exitonclick()
