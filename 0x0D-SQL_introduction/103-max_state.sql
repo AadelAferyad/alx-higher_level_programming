@@ -1,1 +1,1 @@
-SELECT state, MAX(value) AS max FROM temperatures GROUP BY state ORDER BY max DESC;
+SELECT state, MAX(value) AS max FROM temperatures GROUP BY state ORDER BY state DESC;
