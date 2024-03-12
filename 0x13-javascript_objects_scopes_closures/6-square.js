@@ -20,7 +20,7 @@ class Square extends BaseSquare {
         console.log(message);
       }
     } else {
-      super.print();
+      this.print();
     }
   }
 }
