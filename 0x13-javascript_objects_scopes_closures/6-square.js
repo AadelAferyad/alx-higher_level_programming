@@ -10,7 +10,8 @@ class Square extends BaseSquare {
 
   charPrint (c) {
     let i;
-    if (!c) {
+    c = String(c);
+    if (!c || c) {
       c = 'X';
     }
     for (i = 0; i < this.size; i++) {
