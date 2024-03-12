@@ -9,18 +9,12 @@ class Square extends BaseSquare {
   }
 
   charPrint (c) {
-    if (c) {
-      let i;
-      let j;
-      let message = c;
-      for (j = 0; j < this.size; j++) {
-        message += c;
-      }
-      for (i = 0; i < this.size; i++) {
-        console.log(message);
-      }
-    } else {
-      this.print();
+    let i;
+    if (!c) {
+      c = 'X';
+    }
+    for (i = 0; i < this.size; i++) {
+      console.log(c.repeat(this.size));
     }
   }
 }
