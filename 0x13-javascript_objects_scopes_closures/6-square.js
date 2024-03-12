@@ -12,8 +12,6 @@ class Square extends BaseSquare {
     let i;
     if (!c) {
       c = 'X';
-    } else {
-      c = 'C';
     }
     for (i = 0; i < this.size; i++) {
       console.log(c.repeat(this.size));
