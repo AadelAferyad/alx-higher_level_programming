@@ -6,7 +6,7 @@ let i;
 let j;
 let temp;
 if (argc < 2) {
-  console.log(1);
+  console.log(0);
 } else {
   for (i = 0; i < argc; i++) {
     for (j = i + 1; j < argc; j++) {
