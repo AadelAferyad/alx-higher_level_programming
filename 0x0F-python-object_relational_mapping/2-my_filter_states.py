@@ -19,5 +19,6 @@ if __name__ == "__main__" and len(argv) == 5:
             '{}' ORDER BY id ASC".format(argv[4])
     cur.execute(query)
     states = cur.fetchall()
-    print(states[0])
+    for state in states:
+        print(state)
     db.close()
