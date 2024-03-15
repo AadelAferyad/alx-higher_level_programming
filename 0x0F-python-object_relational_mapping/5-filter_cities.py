@@ -27,5 +27,5 @@ if __name__ == "__main__" and len(av) == 5:
     j = 0
     for citie in cities:
         j += 1
-        print(citie[0], end=" " if (j > 0 and j < len(cities)) else "")
+        print(citie[0], end=", " if (j > 0 and j < len(cities)) else "")
     db.close()
