@@ -15,9 +15,9 @@ if __name__ == "__main__" and len(argv) == 5:
     db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                          password=argv[2], database=argv[3])
     cur = db.cursor()
-    q = "SELECT * FROM states WHERE name ='{}'ORDER BY id ASC".format(argv[4])
-    cur.execute(q)
+    query = "SELECT * FROM states WHERE name = \
+            '{}' ORDER BY id ASC".format(argv[4])
+    cur.execute(query)
     states = cur.fetchall()
-    for state in states:
-        print(state)
+    print(states[0])
     db.close()
