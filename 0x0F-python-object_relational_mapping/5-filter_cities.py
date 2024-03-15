@@ -31,3 +31,5 @@ if __name__ == "__main__" and len(av) == 5:
     if (not j):
         print()
     db.close()
+else:
+    print()
