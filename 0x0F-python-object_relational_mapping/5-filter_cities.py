@@ -8,7 +8,7 @@ using the database hbtn_0e_4_usa
 from sys import argv as av
 import MySQLdb
 
-if __name__ == "__main__":
+if __name__ == "__main__" and len(av) == 5:
 
     db = MySQLdb.connect(
         host="localhost",
@@ -18,17 +18,16 @@ if __name__ == "__main__":
         database=av[3]
     )
     cur = db.cursor()
-    query = "SELECT cities.name, states.name FROM cities \
-    JOIN states ON cities.state_id = states.id ORDER BY cities.state_id ASC"
+    query = "SELECT cities.name FROM cities\
+    JOIN states ON states.id = cities.state_id\
+    WHERE states.name = '{}' \
+    ORDER BY cities.state_id ASC".format(av[4])
     cur.execute(query)
     cities = cur.fetchall()
     j = 0
     for citie in cities:
-        if citie[1] == av[4]:
-            if j:
-                print(end=", ")
-            j += 1
-            print(citie[0], end="")
+        j += 1
+        print(citie[0], end=", " if (j > 0 and j < len(cities)) else "")
 
     print()
     db.close()
