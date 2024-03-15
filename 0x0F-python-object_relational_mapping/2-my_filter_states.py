@@ -6,7 +6,7 @@ and fetch data from a database
 from sys import argv
 import MySQLdb
 
-if __name__ == "__main__" and len(argv) == 5:
+if __name__ == "__main__" and len(argv) >= 4:
     """
     script that takes in an argument and displays
     all values in the states table of hbtn_0e_0_usa
@@ -15,10 +15,11 @@ if __name__ == "__main__" and len(argv) == 5:
     db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                          password=argv[2], database=argv[3])
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = \
-            '{}' ORDER BY id ASC".format(argv[4])
-    cur.execute(query)
-    states = cur.fetchall()
-    for state in states:
-        print(state)
+    if (len(argv) >= 5):
+        query = "SELECT * FROM states WHERE name = \
+                '{}' ORDER BY id ASC".format(argv[4])
+        cur.execute(query)
+        states = cur.fetchall()
+        for state in states:
+            print(state)
     db.close()
