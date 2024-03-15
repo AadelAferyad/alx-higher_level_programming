@@ -21,7 +21,7 @@ if __name__ == "__main__" and len(av) == 5:
     query = "SELECT cities.name FROM cities\
     JOIN states ON states.id = cities.state_id\
     WHERE states.name = '{}' \
-    ORDER BY cities.id ASC".format(av[4])
+    ORDER BY cities.state_id ASC".format(av[4])
     cur.execute(query)
     cities = cur.fetchall()
     j = 0
