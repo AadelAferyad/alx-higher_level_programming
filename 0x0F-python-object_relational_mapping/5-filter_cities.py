@@ -18,9 +18,8 @@ if __name__ == "__main__":
         database=av[3]
     )
     cur = db.cursor()
-    query = "SELECT cities.name, states.name FROM cities\
-    JOIN states ON states.id = cities.state_id\
-    ORDER BY cities.state_id ASC"
+    query = "SELECT cities.name, states.name FROM cities \
+    JOIN states ON cities.state_id = states.id ORDER BY cities.state_id ASC"
     cur.execute(query)
     cities = cur.fetchall()
     j = 0
