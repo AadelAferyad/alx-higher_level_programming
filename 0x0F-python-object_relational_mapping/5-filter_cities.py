@@ -29,6 +29,6 @@ if __name__ == "__main__":
                 print(end=", ")
             j += 1
             print(citie[0], end="")
-    if (not j):
-        print()
+
+    print()
     db.close()
