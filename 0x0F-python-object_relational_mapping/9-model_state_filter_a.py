@@ -14,5 +14,5 @@ if __name__ == "__main__":
                              av[1], av[2], av[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for instance in session.query(State).filter(State.name.like('%a')):
+    for instance in session.query(State).filter(State.name.like('%a%')):
         print(str(instance.id) + ": " + instance.name)
