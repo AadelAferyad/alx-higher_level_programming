@@ -14,5 +14,11 @@ if __name__ == "__main__":
                              av[1], av[2], av[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    first_state = session.query(State).first()
-    print(str(first_state.id) + ": " + first_state.name)
+    count = session.query(State).count()
+    message = ""
+    if (count):
+        first_state = session.query(State).first()
+        message += str(first_state.id) + ": " + first_state.name
+    else:
+        message = "Nothing"
+    print(message)
