@@ -14,8 +14,7 @@ if __name__ == "__main__":
                              av[1], av[2], av[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    instances = session.query(State)
+    instances = session.query(State).filter(State.name.like('%a%')).all()
     for instance in instances:
-        if 'a' in instance.name:
-            session.delete(instance)
+        session.delete(instance)
     session.commit()
