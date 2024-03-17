@@ -16,6 +16,6 @@ if __name__ == "__main__":
     session = Session()
     instances = session.query(State)
     for instance in instances:
-        if 'a' in instance.name:
+        if 'a' in instance.name or 'A' in instance.name:
             session.delete(instance)
             session.commit()
