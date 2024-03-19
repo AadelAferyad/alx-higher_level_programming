@@ -3,7 +3,10 @@
 new modle
 """
 from model_state import Base
-from sqlalchemy import Integer, Column, String, ForeignKey
+from sqlalchemy import Integer, Column, String, ForeignKey, MetaData
+from sqlalchemy.orm import declarative_base
+
+Base = declarative_base(metadata=MetaData())
 
 
 class City(Base):
