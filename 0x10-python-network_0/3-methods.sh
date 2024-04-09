@@ -1,3 +1,3 @@
 #!/bin/bash
 #options
-curl -I -s $i | grep "Allow:" | cut -d " " -f 2-
+curl -I -s $1 | grep "Allow:" | sed 's/Allow://i'
