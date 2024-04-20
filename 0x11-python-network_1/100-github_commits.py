@@ -9,5 +9,5 @@ if __name__ == "__main__":
     url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
     req = get(url)
     cm = req.json()
-    for i in range(10):
+    for i in range(min(10, len(cm))):
         print(f"{cm[i]['sha']}: {cm[i]['commit']['author']['name']}")
