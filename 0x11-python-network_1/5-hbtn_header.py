@@ -7,4 +7,4 @@ if __name__ == "__main__":
     from requests import get
     from sys import argv as av
     r = get(av[1])
-    print(r.headers['X-Request-Id'])
+    print(r.headers.get('X-Request-Id'))
