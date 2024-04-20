@@ -6,5 +6,4 @@ if __name__ == '__main__':
     url = av[1]
     data = {'email': av[2]}
     p = post(url, data=data)
-    req = get(url)
-    print(req.text)
+    print(p.text)
