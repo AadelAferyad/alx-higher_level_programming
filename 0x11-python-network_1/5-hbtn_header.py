@@ -5,5 +5,6 @@ alx almost done , fin ana wtf fin ghadi chkon ana
 """
 from requests import get
 from sys import argv as av
+
 r = get(av[1])
 print(r.headers['X-Request-Id'])
