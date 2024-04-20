@@ -10,4 +10,5 @@ if __name__ == "__main__":
     req = get(url)
     cm = req.json()
     for i in range(min(10, len(cm))):
-        print(f"{cm[i]['sha']}: {cm[i]['commit']['author']['name']}")
+        if cm['message'] != "Git Repository is empty.":
+            print(f"{cm[i]['sha']}: {cm[i]['commit']['author']['name']}")
